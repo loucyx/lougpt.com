@@ -1,0 +1,14 @@
+{
+	"$schema": "https://www.schemastore.org/web-manifest-combined.json",
+	"background_color": "#212121",
+	"description": "Fastest and most honest Chatbot in the market",
+	"display": "fullscreen",
+	"icons": [{ "src": "https://lougpt.com/appicon.png", "sizes": "512x512" }],
+	"lang": "en",
+	"name": "LouGPT",
+	"orientation": "any",
+	"scope": "/",
+	"short_name": "LouGPT",
+	"start_url": "/",
+	"theme_color": "#d94c16"
+}
