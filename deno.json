@@ -59,11 +59,11 @@
 	"nodeModulesDir": "auto",
 	"tasks": {
 		"bundle": {
-			"command": "deno bundle --watch ./src/main.tsx -o ./dist/main.js",
+			"command": "deno bundle ./src/main.tsx -o ./dist/main.js",
 			"description": "Bundle app using Deno bundle"
 		},
 		"dev": {
-			"command": "deno task bundle --sourcemap & deno task serve --dev",
+			"command": "deno task bundle --sourcemap --watch & deno task serve --dev",
 			"description": "Bundle with source maps and run server"
 		},
 		"format": {
