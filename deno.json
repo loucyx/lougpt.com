@@ -1,0 +1,87 @@
+{
+	"compilerOptions": {
+		"exactOptionalPropertyTypes": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "preact",
+		"lib": ["deno.ns", "dom", "esnext"],
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedParameters": true,
+		"strict": true
+	},
+	"imports": {
+		"@coven/parsers": "jsr:@coven/parsers@^0.9.3",
+		"@coven/predicates": "jsr:@coven/predicates@^0.9.3",
+		"@coven/rules": "jsr:@coven/rules@^0.9.6",
+		"@coven/types": "jsr:@coven/types@^0.9.3",
+		"@simulcast/core": "jsr:@simulcast/core@^0.9.3",
+		"@simulcast/preact": "jsr:@simulcast/preact@^0.9.3",
+		"@std/assert": "jsr:@std/assert@1",
+		"@std/http": "jsr:@std/http@^1.1.0",
+		"compromise": "npm:compromise@^14.15.0",
+		"preact": "npm:preact@^10.29.1",
+		"prettier": "npm:prettier@^3.8.3"
+	},
+	"lint": {
+		"plugins": ["jsr:@coven/rules"],
+		"rules": {
+			"include": [
+				"ban-untagged-todo",
+				"camelcase",
+				"default-param-last",
+				"eqeqeq",
+				"explicit-function-return-type",
+				"explicit-module-boundary-types",
+				"guard-for-in",
+				"no-await-in-loop",
+				"no-boolean-literal-for-arguments",
+				"no-console",
+				"no-const-assign",
+				"no-eval",
+				"no-external-import",
+				"no-implicit-declare-namespace-export",
+				"no-inferrable-types",
+				"no-non-null-asserted-optional-chain",
+				"no-non-null-assertion",
+				"no-self-compare",
+				"no-sparse-arrays",
+				"no-sync-fn-in-async-fn",
+				"no-throw-literal",
+				"no-top-level-await",
+				"no-useless-rename",
+				"single-var-declarator",
+				"triple-slash-reference"
+			],
+			"tags": ["jsr", "jsx", "react", "recommended", "workspace"]
+		}
+	},
+	"nodeModulesDir": "auto",
+	"tasks": {
+		"bundle": {
+			"command": "deno bundle --watch ./src/main.tsx -o ./dist/main.js",
+			"description": "Bundle app using Deno bundle"
+		},
+		"dev": {
+			"command": "deno task bundle --sourcemap & deno task serve --dev",
+			"description": "Bundle with source maps and run server"
+		},
+		"format": {
+			"command": "TMPDIR=. deno run --allow-env=TMPDIR --allow-read=. --allow-sys=cpus --allow-write=. --ignore-env --no-prompt prettier --write './**/*.{json,md,ts,tsx}'",
+			"description": "Format code using Prettier"
+		},
+		"format-check": {
+			"command": "TMPDIR=. deno run --allow-env=TMPDIR --allow-read=. --allow-sys=cpus --ignore-env --no-prompt prettier --check './**/*.{json,md,ts,tsx}'",
+			"description": "Check formatting using Prettier"
+		},
+		"serve": {
+			"command": "deno --allow-net --allow-read ./serve.ts",
+			"description": "Serve the app (can be live-served with --live)"
+		},
+		"start": {
+			"command": "deno task bundle --minify & deno task serve",
+			"description": "Bundle minified and run static server"
+		}
+	}
+}

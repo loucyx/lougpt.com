@@ -1,0 +1,111 @@
+:root {
+	--text-color: #fff;
+	--brand-color: #d94c16;
+	--input-container-height: 3.5rem;
+	--input-container-padding: 0.625rem;
+	--input-container-vertical-padding: calc(
+		var(--input-container-padding) * 2
+	);
+	--input-container-outer-height: calc(
+		var(--input-container-height) + var(--input-container-vertical-padding)
+	);
+	--input-container-inner-height: calc(
+		var(--input-container-height) - var(--input-container-vertical-padding)
+	);
+	background-color: #212121;
+	color: var(--text-color);
+	font-family: sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 0;
+}
+
+a {
+	color: inherit;
+}
+
+form {
+	max-width: 48rem;
+	width: 90dvw;
+}
+
+output {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: var(--input-container-outer-height);
+	min-height: calc(100dvh - var(--input-container-outer-height));
+	justify-content: flex-end;
+
+	p {
+		align-self: flex-start;
+		border-radius: 1rem;
+		display: block;
+		flex: 0;
+		margin: 1.5rem 0;
+		padding: 1rem;
+
+		&.bot-message + &.human-message {
+			margin-bottom: 0.5rem;
+		}
+
+		&.human-message + &.bot-message {
+			margin-top: 0.5rem;
+		}
+
+		&.human-message {
+			align-self: flex-end;
+			background-color: var(--brand-color);
+			max-width: 70%;
+		}
+	}
+}
+
+.input-container {
+	background-color: #303030;
+	border-radius: calc(var(--input-container-height) / 2);
+	bottom: 1rem;
+	display: flex;
+	gap: 1rem;
+	height: var(--input-container-height);
+	max-width: 48rem;
+	padding: var(--input-container-padding) var(--input-container-padding)
+		var(--input-container-padding) calc(var(--input-container-height) / 2);
+	position: fixed;
+	width: 90dvw;
+
+	&:focus-within {
+		outline: 0.1rem solid #fff;
+	}
+
+	button {
+		height: calc(--input-container-inner-height);
+		background-color: var(--brand-color);
+		border-radius: calc(var(--input-container-inner-height) / 2);
+		border: none;
+		color: var(--text-color);
+		cursor: pointer;
+		font-weight: 700;
+		padding: var(--input-container-padding);
+
+		svg {
+			fill: currentColor;
+		}
+	}
+
+	input {
+		flex: 1;
+		border: none;
+		background-color: transparent;
+		color: var(--text-color);
+		font-size: inherit;
+		outline: none;
+	}
+}
