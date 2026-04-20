@@ -18,7 +18,15 @@ export const Messages = (): ReadonlyArray<JSX.Element> => {
 			{message.content}
 			{isUndefined(message.link) ?
 				undefined
-			:	<a rel="noopener noreferrer" target="_blank" {...message.link} />}
+			:	<>
+					{" "}
+					<a
+						rel="noopener noreferrer"
+						target="_blank"
+						{...message.link}
+					/>
+				</>
+			}
 		</p>
 	));
 };
