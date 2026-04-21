@@ -25,6 +25,8 @@ export const getResponse = (
 			: greeting ? ""
 			: fallbackResponse()
 		}`.trim(),
-		...(question ? { link: questionResponse(question).link } : undefined),
+		...(!imperative && question ?
+			{ link: questionResponse(question).link }
+		:	undefined),
 	};
 };
