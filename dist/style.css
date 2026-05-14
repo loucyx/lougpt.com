@@ -79,17 +79,37 @@ output {
 
 		p {
 			padding: 0;
+
+			strong {
+				color: var(--brand-color);
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				vertical-align: last;
+				width: 10ch;
+
+				img {
+					max-height: 1.2rem;
+					margin-right: 0.75ch;
+					margin-top: -0.2rem;
+				}
+			}
 		}
 
 		ul {
+			list-style-type: none;
 			margin-bottom: 0.5rem;
-			padding-left: 1rem;
+			padding-left: 0;
 
 			li {
 				padding-block: 0.5rem;
 
 				strong {
 					margin-right: 0.75ch;
+
+					span {
+						margin-right: 0.75rem;
+					}
 				}
 			}
 		}

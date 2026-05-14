@@ -31,25 +31,41 @@ export const Messages = (): JSX.Element | ReadonlyArray<JSX.Element> => {
 			</p>
 		)) ?? (
 			<aside>
-				<h1>Hi there!</h1>
-				<p>LouGPT is a Chatbot with the following features:</p>
+				<h1>
+					<span aria-hidden="true">👋</span> Hi there!
+				</h1>
+				<p>
+					<strong>
+						<img src="/favicon.svg" aria-hidden="true" />
+						<span>LouGPT</span>
+					</strong>{" "}
+					is a Chatbot with the following features:
+				</p>
 				<ul>
 					<li>
-						<strong>Fast:</strong>
+						<strong>
+							<span aria-hidden="true">⚡️</span>Fast:
+						</strong>
 						You get an instant answer as soon as you send your
 						message.
 					</li>
 					<li>
-						<strong>Honest:</strong>
+						<strong>
+							<span aria-hidden="true">🤞</span>Honest:
+						</strong>
 						No hallucinations, no lies.
 					</li>
 					<li>
-						<strong>Private:</strong>
+						<strong>
+							<span aria-hidden="true">🔐</span>Private:
+						</strong>
 						No data is sent to the server, the chat is only stored
 						locally. No analytics.
 					</li>
 					<li>
-						<strong>Accessible:</strong>
+						<strong>
+							<span aria-hidden="true">🌎</span>Accessible:
+						</strong>
 						Available everywhere, where you have a browser, that is.
 					</li>
 				</ul>
