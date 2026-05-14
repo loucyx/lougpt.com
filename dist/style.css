@@ -66,6 +66,34 @@ output {
 			max-width: 70%;
 		}
 	}
+
+	aside {
+		padding: 1rem 2rem;
+		background-color: rgba(0, 0, 0, 0.25);
+		border-radius: 1rem;
+		margin-bottom: calc((50dvh - var(--input-container-outer-height)) / 2);
+
+		h1 {
+			margin-top: 1rem;
+		}
+
+		p {
+			padding: 0;
+		}
+
+		ul {
+			margin-bottom: 0.5rem;
+			padding-left: 1rem;
+
+			li {
+				padding-block: 0.5rem;
+
+				strong {
+					margin-right: 0.75ch;
+				}
+			}
+		}
+	}
 }
 
 .input-container {
@@ -101,11 +129,12 @@ output {
 	}
 
 	input {
-		flex: 1;
-		border: none;
 		background-color: transparent;
+		border: none;
 		color: var(--text-color);
+		flex: 1;
 		font-size: inherit;
+		min-width: 1rem;
 		outline: none;
 	}
 }

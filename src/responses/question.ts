@@ -49,7 +49,7 @@ export const questionResponse = (
 }> => ({
 	content: questionResponses[current++ % questionResponses.length] ?? "",
 	link: {
-		children: q,
+		children: `"${q}" in DuckDuckGo`,
 		href: `https://ddg.gg/?${new URLSearchParams({ q })}`,
 	},
 });

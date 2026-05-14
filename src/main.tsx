@@ -4,7 +4,9 @@ import { Messages } from "./components/Messages.tsx";
 
 document.querySelector("form")?.addEventListener("submit", emitSubmit);
 
-render(<Messages />, document.querySelector("output") as HTMLOutputElement);
+const output = document.querySelector("output") as HTMLOutputElement;
+
+render(<Messages />, output);
 
 if (!navigator.serviceWorker.controller) {
 	navigator.serviceWorker.register("/sw.js");

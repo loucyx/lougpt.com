@@ -6,27 +6,54 @@ import { scrollIntoView } from "../utils/scrollIntoView.ts";
 /**
  * Message list display.
  */
-export const Messages = (): ReadonlyArray<JSX.Element> => {
+export const Messages = (): JSX.Element | ReadonlyArray<JSX.Element> => {
 	const messages = useMessages();
 
-	return messages.map(({ message, timestamp, user }) => (
-		<p
-			class={`${user}-message`}
-			data-timestamp={timestamp}
-			ref={scrollIntoView}
-		>
-			{message.content}
-			{isUndefined(message.link) ?
-				undefined
-			:	<>
-					{" "}
-					<a
-						rel="noopener noreferrer"
-						target="_blank"
-						{...message.link}
-					/>
-				</>
-			}
-		</p>
-	));
+	return (
+		messages?.map(({ message, timestamp, user }) => (
+			<p
+				class={`${user}-message`}
+				data-timestamp={timestamp}
+				ref={scrollIntoView}
+			>
+				{message.content}
+				{isUndefined(message.link) ?
+					undefined
+				:	<>
+						{" "}
+						<a
+							rel="noopener noreferrer"
+							target="_blank"
+							{...message.link}
+						/>
+					</>
+				}
+			</p>
+		)) ?? (
+			<aside>
+				<h1>Hi there!</h1>
+				<p>LouGPT is a Chatbot with the following features:</p>
+				<ul>
+					<li>
+						<strong>Fast:</strong>
+						You get an instant answer as soon as you send your
+						message.
+					</li>
+					<li>
+						<strong>Honest:</strong>
+						No hallucinations, no lies.
+					</li>
+					<li>
+						<strong>Private:</strong>
+						No data is sent to the server, the chat is only stored
+						locally. No analytics.
+					</li>
+					<li>
+						<strong>Accessible:</strong>
+						Available everywhere, where you have a browser, that is.
+					</li>
+				</ul>
+			</aside>
+		)
+	);
 };

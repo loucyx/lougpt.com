@@ -1,3 +1,4 @@
+import type { Maybe } from "@coven/types";
 import { useBroadcast } from "@simulcast/preact";
 import { registry } from "../broadcast.ts";
 import { getResponse } from "../getResponse.ts";
@@ -15,7 +16,7 @@ export type Message = Readonly<{
 /**
  * Hook to handle message submission and state for message listing.
  */
-export const useMessages = (): ReadonlyArray<Message> => {
+export const useMessages = (): Maybe<ReadonlyArray<Message>> => {
 	const [messages, setMessages] = useLocalStorage<ReadonlyArray<Message>>(
 		"messages",
 		[],
@@ -43,5 +44,5 @@ export const useMessages = (): ReadonlyArray<Message> => {
 		}
 	});
 
-	return messages;
+	return messages.length > 0 ? messages : undefined;
 };
