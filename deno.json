@@ -12,15 +12,16 @@
 		"strict": true
 	},
 	"imports": {
-		"@coven/parsers": "jsr:@coven/parsers@^0.9.6",
-		"@coven/predicates": "jsr:@coven/predicates@^0.9.6",
-		"@coven/rules": "jsr:@coven/rules@^0.9.6",
-		"@coven/types": "jsr:@coven/types@^0.9.6",
-		"@simulcast/core": "jsr:@simulcast/core@^0.9.6",
-		"@simulcast/preact": "jsr:@simulcast/preact@^0.9.6",
-		"@std/http": "jsr:@std/http@^1.1.0",
-		"compromise": "npm:compromise@^14.15.0",
-		"preact": "npm:preact@^10.29.1",
+		"@coven/memo": "jsr:@coven/memo@^0.9.8",
+		"@coven/parsers": "jsr:@coven/parsers@^0.9.8",
+		"@coven/predicates": "jsr:@coven/predicates@^0.9.8",
+		"@coven/rules": "jsr:@coven/rules@^0.9.8",
+		"@coven/types": "jsr:@coven/types@^0.9.8",
+		"@simulcast/core": "jsr:@simulcast/core@^0.9.8",
+		"@simulcast/preact": "jsr:@simulcast/preact@^0.9.8",
+		"@std/http": "jsr:@std/http@^1.1.1",
+		"compromise": "npm:compromise@^14.15.1",
+		"preact": "npm:preact@^10.29.2",
 		"prettier": "npm:prettier@^3.8.3"
 	},
 	"lint": {
