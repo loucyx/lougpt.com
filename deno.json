@@ -75,8 +75,8 @@
 			"description": "Check formatting using Prettier"
 		},
 		"serve": {
-			"command": "deno --allow-net:0.0.0.0:3456 --allow-read=./dist ./serve.ts",
-			"description": "Serve the app (can be live-served with --live)"
+			"command": "deno --allow-net=0.0.0.0:3456 --allow-read=./dist ./serve.ts",
+			"description": "Serve the app locally"
 		}
 	}
 }

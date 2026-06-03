@@ -50,6 +50,6 @@ export const questionResponse = (
 	content: questionResponses[current++ % questionResponses.length] ?? "",
 	link: {
 		children: `"${q}" in DuckDuckGo`,
-		href: `https://ddg.gg/?${new URLSearchParams({ q })}`,
+		href: `https://noai.duckduckgo.com/?${new URLSearchParams({ q })}`,
 	},
 });
