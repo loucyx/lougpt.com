@@ -26,12 +26,9 @@ export const useMessages = (): Maybe<ReadonlyArray<Message>> => {
 	onSubmit((event) => {
 		event.preventDefault();
 		const form = event.currentTarget as HTMLFormElement;
-		const { elements } = form as unknown as {
-			elements: { message: HTMLInputElement };
-		};
-		const message = elements.message.value;
+		const message = new FormData(form).get("message");
 
-		if (message) {
+		if (typeof message === "string") {
 			const timestamp = Date.now();
 			const response = getResponse(message);
 
@@ -40,7 +37,7 @@ export const useMessages = (): Maybe<ReadonlyArray<Message>> => {
 				{ message: { content: message }, timestamp, user: "human" },
 				{ message: response, timestamp: timestamp + 1, user: "bot" },
 			]);
-			elements.message.value = "";
+			form.reset();
 		}
 	});
 

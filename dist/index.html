@@ -19,12 +19,26 @@
 		<title>LouGPT</title>
 	</head>
 	<body>
+		<main
+			aria-atomic="false"
+			aria-label="Message history"
+			aria-live="polite"
+			aria-relevant="additions"
+			role="log"
+		></main>
 		<form method="POST">
-			<output name="chat" for="message"></output>
-			<div class="input-container">
-				<input autofocus id="message" name="message" placeholder="Ask anything" />
-				<button type="submit" aria-label="Send">Send</button>
-			</div>
+			<fieldset class="input-container">
+				<legend>Compose a message</legend>
+				<label for="message">Type a message</label>
+				<input
+					autocomplete="off"
+					autofocus
+					id="message"
+					name="message"
+					placeholder="Type a message"
+				/>
+				<button type="submit" aria-label="Send message">Send</button>
+			</fieldset>
 		</form>
 	</body>
 </html>

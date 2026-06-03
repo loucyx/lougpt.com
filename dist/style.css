@@ -1,6 +1,6 @@
 :root {
 	--text-color: #fff;
-	--brand-color: #d94c16;
+	--brand-color: #c83b05;
 	--input-container-height: 3.5rem;
 	--input-container-padding: 0.625rem;
 	--input-container-vertical-padding: calc(
@@ -37,10 +37,10 @@ form {
 	width: 90dvw;
 }
 
-output {
+main {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: var(--input-container-outer-height);
+	padding-bottom: var(--input-container-outer-height);
 	min-height: calc(100dvh - var(--input-container-outer-height));
 	justify-content: flex-end;
 
@@ -120,6 +120,7 @@ output {
 .input-container {
 	background-color: #303030;
 	border-radius: calc(var(--input-container-height) / 2);
+	border: none;
 	bottom: 1rem;
 	display: flex;
 	gap: 1rem;
@@ -132,6 +133,17 @@ output {
 
 	&:focus-within {
 		outline: 0.1rem solid #fff;
+	}
+
+	label,
+	legend {
+		clip-path: inset(50%);
+		clip: rect(0 0 0 0);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
 	}
 
 	button {

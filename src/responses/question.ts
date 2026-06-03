@@ -1,3 +1,4 @@
+import { memo } from "@coven/memo";
 import compromise from "compromise";
 import { randomSort } from "../utils/randomSort.ts";
 
@@ -46,10 +47,11 @@ export const questionResponse = (
 ): Readonly<{
 	content: string;
 	link?: Readonly<{ children: string; href: string }>;
-}> => ({
-	content: questionResponses[current++ % questionResponses.length] ?? "",
-	link: {
-		children: `"${q}" in DuckDuckGo`,
-		href: `https://noai.duckduckgo.com/?${new URLSearchParams({ q })}`,
-	},
-});
+}> =>
+	memo({
+		content: questionResponses[current++ % questionResponses.length] ?? "",
+		link: {
+			children: `"${q}" in DuckDuckGo`,
+			href: `https://noai.duckduckgo.com/?${new URLSearchParams({ q })}`,
+		},
+	});

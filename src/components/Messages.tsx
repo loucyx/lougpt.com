@@ -12,6 +12,7 @@ export const Messages = (): JSX.Element | ReadonlyArray<JSX.Element> => {
 	return (
 		messages?.map(({ message, timestamp, user }) => (
 			<p
+				aria-label={`Message from ${user}`}
 				class={`${user}-message`}
 				data-timestamp={timestamp}
 				ref={scrollIntoView}
