@@ -40,7 +40,7 @@ form {
 main {
 	display: flex;
 	flex-direction: column;
-	padding-bottom: var(--input-container-outer-height);
+	margin-bottom: var(--input-container-outer-height);
 	min-height: calc(100dvh - var(--input-container-outer-height));
 	justify-content: flex-end;
 

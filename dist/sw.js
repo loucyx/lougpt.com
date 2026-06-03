@@ -27,15 +27,21 @@ const returnFromCache = (request) =>
 				),
 		);
 
-self.addEventListener("install", (event) =>
+self.addEventListener("activate", (activateEvent) =>
+	activateEvent.waitUntil(self.clients.claim()),
+);
+
+self.addEventListener("install", (event) => {
+	self?.skipWaiting?.();
+
 	event.waitUntil(() =>
 		caches
 			.open("offline")
 			.then((cache) =>
 				cache.addAll(["/", "/index.html", "/main.js", "/style.css"]),
 			),
-	),
-);
+	);
+});
 
 self.addEventListener("fetch", (event) => {
 	event.respondWith(
