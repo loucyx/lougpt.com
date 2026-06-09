@@ -1,6 +1,7 @@
 import { isUndefined } from "@coven/predicates";
 import type { JSX } from "preact";
 import { useMessages } from "../hooks/useMessages.ts";
+import { getGreeting } from "../responses/greeting.ts";
 import { scrollIntoView } from "../utils/scrollIntoView.ts";
 
 /**
@@ -33,22 +34,21 @@ export const Messages = (): JSX.Element | ReadonlyArray<JSX.Element> => {
 		)) ?? (
 			<aside>
 				<h1>
-					<span aria-hidden="true">👋</span> Hi there!
+					<span aria-hidden="true">👋</span> {getGreeting("hi")}
 				</h1>
 				<p>
 					<strong>
 						<img src="/favicon.svg" aria-hidden="true" />
 						<span>LouGPT</span>
 					</strong>{" "}
-					is a Chatbot with the following features:
+					is a Chatbot who is:
 				</p>
 				<ul>
 					<li>
 						<strong>
 							<span aria-hidden="true">⚡️</span>Fast:
 						</strong>
-						You get an instant answer as soon as you send your
-						message.
+						You get an instant answers.
 					</li>
 					<li>
 						<strong>
@@ -60,14 +60,13 @@ export const Messages = (): JSX.Element | ReadonlyArray<JSX.Element> => {
 						<strong>
 							<span aria-hidden="true">🔐</span>Private:
 						</strong>
-						No data is sent to the server, the chat is only stored
-						locally. No analytics.
+						All local. No analytics.
 					</li>
 					<li>
 						<strong>
-							<span aria-hidden="true">🌎</span>Accessible:
+							<span aria-hidden="true">🌎</span>Web based:
 						</strong>
-						Available everywhere, where you have a browser, that is.
+						No app store needed.
 					</li>
 				</ul>
 			</aside>

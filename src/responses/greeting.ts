@@ -15,6 +15,7 @@ const greetingsArray = (
 		"Hey there!",
 		"Hey!",
 		"Heya!",
+		"Hi there!",
 		"Hi!",
 		"Hiya!",
 		"Howdy!",

@@ -32,7 +32,8 @@ a {
 	color: inherit;
 }
 
-form {
+form,
+main {
 	max-width: 48rem;
 	width: 90dvw;
 }
@@ -40,9 +41,10 @@ form {
 main {
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-end;
 	margin-bottom: var(--input-container-outer-height);
 	min-height: calc(100dvh - var(--input-container-outer-height));
-	justify-content: flex-end;
+	position: relative;
 
 	p {
 		align-self: flex-start;
@@ -72,7 +74,9 @@ main {
 		border-radius: 1rem;
 		margin-bottom: calc(50dvh - var(--input-container-outer-height));
 		padding: 1rem 2rem;
+		position: absolute;
 		transform: translateY(50%);
+		width: 100%;
 
 		h1 {
 			margin-top: 1rem;
