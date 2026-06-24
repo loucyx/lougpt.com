@@ -1,4 +1,4 @@
-# lougpt.com
+# <img alt="LouGPT logo" src="https://raw.githubusercontent.com/loucyx/lougpt.com/refs/heads/main/dist/favicon.svg" height="22" /> lougpt.com
 
 Simple LLM parody site that uses [`compromise`](https://npm.im/compromise) for
 the language processing part, and a bunch of sassy replies are generated out of
