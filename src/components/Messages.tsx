@@ -48,7 +48,7 @@ export const Messages = (): JSX.Element | ReadonlyArray<JSX.Element> => {
 						<strong>
 							<span aria-hidden="true">⚡️</span>Fast:
 						</strong>
-						You get an instant answers.
+						Get instant answers.
 					</li>
 					<li>
 						<strong>
