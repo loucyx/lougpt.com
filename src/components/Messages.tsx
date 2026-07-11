@@ -38,7 +38,12 @@ export const Messages = (): JSX.Element | ReadonlyArray<JSX.Element> => {
 				</h1>
 				<p>
 					<strong>
-						<img src="/favicon.svg" aria-hidden="true" />
+						<img
+							aria-hidden="true"
+							height={20}
+							src="/favicon.svg"
+							width={20}
+						/>
 						<span>LouGPT</span>
 					</strong>{" "}
 					is a Chatbot who is:
