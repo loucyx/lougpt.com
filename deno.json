@@ -19,10 +19,10 @@
 		"@coven/types": "jsr:@coven/types@^0.9.9",
 		"@simulcast/core": "jsr:@simulcast/core@^0.9.9",
 		"@simulcast/preact": "jsr:@simulcast/preact@^0.9.9",
-		"@std/http": "jsr:@std/http@^1.1.1",
+		"@std/http": "jsr:@std/http@^1.1.2",
 		"compromise": "npm:compromise@^14.15.1",
-		"preact": "npm:preact@^10.29.3",
-		"prettier": "npm:prettier@^3.8.5"
+		"preact": "npm:preact@^10.29.7",
+		"prettier": "npm:prettier@^3.9.5"
 	},
 	"lint": {
 		"plugins": ["jsr:@coven/rules"],
